@@ -21,7 +21,7 @@ class OpenFlutterProductListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var productTiles = <Widget>[];
-    for (var i = 0; i < products.length; i++) {
+    for (var i = 0; i<4; i++) {
       productTiles.add(
         OpenFlutterProductCard(
             width: elementWidth, height: elementHeight, product: products[i]),

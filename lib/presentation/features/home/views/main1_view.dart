@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nabina/config/theme.dart';
 import 'package:nabina/data/fake_repositories/models/product.dart';
+import 'package:nabina/data/fake_repositories/models/mainicons.dart';
 import 'package:nabina/presentation/widgets/widgets.dart';
 import 'package:nabina/presentation/features/wrapper.dart';
 import 'package:flutter_translate/flutter_translate.dart';
@@ -8,9 +10,10 @@ import 'package:flutter_translate/flutter_translate.dart';
 class Main1View extends StatefulWidget {
   final List<Product> products;
   final List<Product> newproducts;
+  final List<MainIcons> mainicons;
   final Function changeView;
 
-  const Main1View({Key key, this.products,this.newproducts, this.changeView}) : super(key: key);
+  const Main1View({Key key, this.products,this.newproducts, this.changeView,this.mainicons}) : super(key: key);
 
   @override
   _Main1ViewState createState() => _Main1ViewState();
@@ -38,9 +41,32 @@ class _Main1ViewState extends State<Main1View> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(top: 30.0),
+                    height: width * .4,
+                    width: width,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                    ),
+
+                      child: Center(
+                        child: Column(
+                          children: <Widget>[
+                            CommonHeader(width: widgetWidth,),
+                            SizedBox(height: 20.0,),
+                            SearchBox(width: width *0.9,),
+                          ],
+                        ),
+                      ),
+
+
+                  ),
+                  OpenflutterMainmenuiconlist(width: widgetWidth,height: 110.0,mainicons: widget.mainicons,),
+
                   OpenFlutterProductListView(
                       width: widgetWidth,height: 80.0, products: widget.newproducts),
-                  Container(
+
+                    Container(
                       padding: EdgeInsets.only(
                         left: AppSizes.sidePadding,
                       ),
@@ -63,6 +89,7 @@ class _Main1ViewState extends State<Main1View> {
                   )
                 ],
               )),
+
           OpenFlutterBlockHeader(
             width: widgetWidth,
             title: 'New',
@@ -71,7 +98,7 @@ class _Main1ViewState extends State<Main1View> {
             description: 'You’ve never seen it before!',
           ),
           OpenFlutterProductListView(
-              width: widgetWidth, height: 286.0,products: widget.products),
+              width: widgetWidth, height: 6.0,products: widget.products),
           OpenFlutterButton(
             title: 'Next Home Page',
             width: 160,

@@ -48,7 +48,7 @@ class OpenFlutterProductCard extends StatelessWidget {
                   Container(
                     width: width + AppSizes.widgetSidePadding,
                     child: Container(
-                      height: width * 1.13,
+                      height: width * .7,
                       decoration: BoxDecoration(
                         borderRadius:
                         BorderRadius.circular(AppSizes.imageRadius),
@@ -114,7 +114,7 @@ class OpenFlutterProductCard extends StatelessWidget {
       ],
     );
   }
-
+  
   Widget buildRating(BuildContext context, Product product) {
     return Container(
         width: width - 20,
