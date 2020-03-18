@@ -4,6 +4,7 @@ import 'package:nabina/config/theme.dart';
 import 'package:nabina/data/fake_repositories/models/product.dart';
 import 'package:nabina/data/fake_repositories/models/mainicons.dart';
 import 'package:nabina/presentation/widgets/widgets.dart';
+
 import 'package:nabina/presentation/features/wrapper.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
@@ -25,89 +26,75 @@ class _Main1ViewState extends State<Main1View> {
     var _theme = Theme.of(context);
     var width = MediaQuery.of(context).size.width;
     var widgetWidth = width - AppSizes.sidePadding * 2;
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          Container(
-              height: width * 1.43,
+    return Scaffold(
+      body: Container(
+        color: Color.fromARGB(62, 168, 174, 201),
+        child: ListView(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(top: 30.0),
+              height: width * .5,
               width: width,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.fill,
-                  image: AssetImage('assets/splash/splash-home.png'),
+                  image: AssetImage('assets/icons/dash/dash.png'),
                 ),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(top: 30.0),
-                    height: width * .4,
-                    width: width,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                    ),
 
-                      child: Center(
-                        child: Column(
-                          children: <Widget>[
-                            CommonHeader(width: widgetWidth,),
-                            SizedBox(height: 20.0,),
-                            SearchBox(width: width *0.9,),
-                          ],
-                        ),
-                      ),
+              child: Center(
+                child: Column(
+                  children: <Widget>[
+                    CommonHeader(width: widgetWidth,),
+                    SizedBox(height: 10.0,),
+                    SearchBox(width: width *0.9,),
+
+                  ],
+                ),
+              ),
 
 
-                  ),
-                  OpenflutterMainmenuiconlist(width: widgetWidth,height: 110.0,mainicons: widget.mainicons,),
 
-                  OpenFlutterProductListView(
-                      width: widgetWidth,height: 80.0, products: widget.newproducts),
 
-                    Container(
-                      padding: EdgeInsets.only(
-                        left: AppSizes.sidePadding,
-                      ),
-                      width: width / 2,
-                      child: Text('fashionSale',
-                          style: _theme.textTheme.display4)),
-                  Container(
-                    padding: EdgeInsets.only(
-                        left: AppSizes.sidePadding,
-                        bottom: AppSizes.sidePadding,
-                        top: AppSizes.sidePadding),
-                    width: 160,
-                    child: OpenFlutterButton(
-                      title: 'Check',
-                      width: 160,
-                      height: 48,
-                      onPressed: (() => widget.changeView(
-                          changeType: ViewChangeType.Forward)),
-                    ),
-                  )
-                ],
-              )),
+            ),
+            Openflutterfakelist(),
+            Container(
+              child: Padding(
+                padding: EdgeInsets.only(top: 10.0,left: 20.0),
+                child: Text("Building & Interior Accessories at Best Rates",style: TextStyle(fontSize: 16.0,color:Colors.black),),
+              ),
+            ),
+            FeaturedProducts(),
+            ProductCard1(
+              brand: 'Tile',
+              name: 'xxxxx',
+              price: 24.00,
+              onSale: true,
+              picture: '',),
+            ProductCard1(
+              brand: 'Tile',
+              name: 'xxxxx',
+              price: 24.00,
+              onSale: true,
+              picture: '',),
+            ProductCard1(
+              brand: 'Tile',
+              name: 'xxxxx',
+              price: 24.00,
+              onSale: true,
+              picture: '',),
 
-          OpenFlutterBlockHeader(
-            width: widgetWidth,
-            title: 'New',
-            linkText: 'View All',
-            onLinkTap: (() => {}),
-            description: 'You’ve never seen it before!',
-          ),
-          OpenFlutterProductListView(
-              width: widgetWidth, height: 6.0,products: widget.products),
-          OpenFlutterButton(
-            title: 'Next Home Page',
-            width: 160,
-            height: 48,
-            onPressed: (() =>
-                widget.changeView(changeType: ViewChangeType.Forward)),
-          )
-        ],
+
+
+
+
+          ],
+        ),
+
       ),
+
+
+
     );
   }
 }

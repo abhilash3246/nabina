@@ -7,7 +7,7 @@ import 'widgets.dart';
 class OpenFlutterProductListView extends StatelessWidget {
   final double width;
   final double height;
-  final double elementHeight = 184;
+  final double elementHeight = 100;
   final double elementWidth = 148;
   final List<Product> products;
 

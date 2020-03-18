@@ -15,6 +15,11 @@ export 'common_header.dart';
 export 'top_menu.dart';
 export 'menuicon_card.dart';
 export 'mainmenu_list_view.dart';
+export 'fake_mainmenu.dart';
+export 'fake_banner.dart';
+export 'fake_dashoffer.dart';
+export 'fake_banner2.dart';
+export 'product_card1.dart';
 
 
 

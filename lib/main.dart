@@ -1,39 +1,58 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:flutter/cupertino.dart';
 import 'package:nabina/presentation/features/home/homescreen.dart';
 
-void main() => runApp(HomeScreen());
+void main() => runApp(new MaterialApp(
+  home: new SplashScreen(),
+  debugShowCheckedModeBanner: false,
+  routes: <String, WidgetBuilder>{
+    '/HomeScreen': (BuildContext context) => new HomeScreen()
+  },
+));
 
-class MyApp extends StatefulWidget{
-  @override
-  _MyAppstate createState() => _MyAppstate();
+ class SplashScreen extends StatefulWidget {
+   @override
+   _SplashScreenState createState() => new _SplashScreenState();
+ }
 
-}
-class _MyAppstate extends State<MyApp>{
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    loadData();
-  }
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/splash.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
+ class _SplashScreenState extends State<SplashScreen> {
+   startTime() async {
+     var _duration = new Duration(seconds: 3);
+     return new Timer(_duration, navigationPage);
+   }
 
-  Future<Timer> loadData()  async{
-    return new Timer(Duration(seconds: 5), onDoneloading);
-  }
-  onDoneloading() async{
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
-  }
+   void navigationPage() {
+     Navigator.of(context).pushReplacementNamed('/HomeScreen');
+   }
 
-}
+   @override
+   void initState() {
+     super.initState();
+     startTime();
+   }
+
+   @override
+   Widget build(BuildContext context) {
+     return new Container(
+       decoration: BoxDecoration(
+         image: DecorationImage(
+             image: AssetImage('assets/splash.jpg'),
+             fit: BoxFit.cover
+         ),
+       ),
+       child: Center(
+         child: Container(
+           height: 100.0,
+           width: 150.0,
+           decoration: BoxDecoration(
+               image: DecorationImage(
+                   image: AssetImage('assets/icons/logo.png')
+               ),
+           ),
+         ),
+       ),
+
+     );
+   }
+ }

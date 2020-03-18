@@ -64,13 +64,13 @@ class _HomeWrapperState extends OpenFlutterWrapperState<HomeWrapper> {
                  mainicons:
                  state is HomeLoadedState? state.mainicons : <MainIcons>[]),
 
-            Main2View(
-                changeView: changePage,
-                salesProducts:
-                state is HomeLoadedState ? state.salesProducts : <Product>[],
-                newProducts:
-                state is HomeLoadedState ? state.newProducts : <Product>[]),
-            Main3View(changeView: changePage)
+//            Main2View(
+//                changeView: changePage,
+//                salesProducts:
+//                state is HomeLoadedState ? state.salesProducts : <Product>[],
+//                newProducts:
+//                state is HomeLoadedState ? state.newProducts : <Product>[]),
+//            Main3View(changeView: changePage)
           ]);
         });
   }

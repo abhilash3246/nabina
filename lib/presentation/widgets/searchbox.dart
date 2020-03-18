@@ -10,17 +10,42 @@ class SearchBox extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      width: width,
-      decoration: BoxDecoration(border: Border.all(width: 1.0),borderRadius: BorderRadius.circular(5.0),boxShadow:[ BoxShadow(spreadRadius: 3.0,color: Colors.white)]),
-
-      child: new TextField(
-//        controller: _searchEdit,
-        decoration: InputDecoration(
-          hintText: "Search",
-          hintStyle: new TextStyle(color: Colors.grey[300]),
+    return    Padding(
+      padding: EdgeInsets.all(15),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.blueGrey[50],
+          borderRadius: BorderRadius.all(
+            Radius.circular(5.0),
+          ),
         ),
-        textAlign: TextAlign.center,
+        child: TextField(
+          style: TextStyle(
+            fontSize: 15.0,
+            color: Colors.blueGrey[300],
+          ),
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.all(10.0),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.0),
+              borderSide: BorderSide(color: Colors.white,),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white,),
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+            hintText: "E.g: items",
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.blueGrey[300],
+            ),
+            hintStyle: TextStyle(
+              fontSize: 15.0,
+              color: Colors.blueGrey[300],
+            ),
+          ),
+          maxLines: 1,
+        ),
       ),
     );
   }

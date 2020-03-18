@@ -19,29 +19,23 @@ class CommonHeader extends StatelessWidget{
     var _theme = Theme.of(context);
 
     return Container(
-      height: 24.0,
-      width: width,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Align(
-            child: Icon(Icons.clear_all,color: Colors.white,size: 26.0,),),
-         Expanded(
+              alignment: Alignment.topRight,
+              child: Icon(Icons.menu,color: Colors.white,)
+          ),
+          Image.asset('assets/icons/logo.png',scale:1.2,),
 
-           child: Padding(
-             padding: EdgeInsets.only(left: 10.0,right: 10.0),
-             child: Text("Nabina"),
-           ),
-         ),
           Align(
+              alignment: Alignment.topRight,
+              child: Icon(Icons.shopping_cart,color: Colors.white,)),
+          Align(
+              alignment: Alignment.topRight,
+              child: Icon(Icons.person,color: Colors.white,)),
 
-            child: Row(
-              children: <Widget>[
-                Icon(Icons.notifications,color: Colors.white,size: 24.0,),
-                Icon(Icons.add_shopping_cart,color: Colors.white,size: 24.0,),
-              ],
-            ),
-          )
+
 
         ],
       ),
