@@ -5,29 +5,28 @@ class MainmenuResository{
   List<MainIcons> geticons(){
     return [
     MainIcons(
-        id: 0,
+        id: 1,
         title: 'Door',
-        image: 'assets/mainscreen_icons/doors.png'
+        image: 'assets/icons/mainscreen_icons/doors.png'
     ),
       MainIcons(
-          id: 1,
-          title: 'Kitcheb',
-          image: 'assets/mainscreen_icons/kitchen.png'
-      ),
-      MainIcons(
           id: 2,
-          title: 'Mater',
-          image: 'assets/mainscreen_icons/mater.png'
+          title: 'Kitcheb',
+          image: 'assets/icons/mainscreen_icons/kitchen.png'
       ),
       MainIcons(
           id: 3,
-          title: 'Por',
-          image: 'assets/mainscreen_icons/por.png'
+          title: 'Mater',
+          image: 'assets/icons/mainscreen_icons/mater.png'
       ),
-
-
-
+      MainIcons(
+          id: 4,
+          title: 'Por',
+          image: 'assets/icons/mainscreen_icons/por.png'
+      ),
     ];
+
+
 
   }
 }

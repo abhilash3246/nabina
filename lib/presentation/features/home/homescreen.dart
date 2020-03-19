@@ -61,7 +61,7 @@ class _HomeWrapperState extends OpenFlutterWrapperState<HomeWrapper> {
                 state is HomeLoadedState ? state.newProducts : <Product>[],
                 newproducts:
                 state is HomeLoadedState ? state.salesProducts : <Product>[],
-                 mainicons:
+                 mainiconss:
                  state is HomeLoadedState? state.mainicons : <MainIcons>[]),
 
 //            Main2View(

@@ -23,10 +23,9 @@ class OpenflutterMenuCard extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return GestureDetector(
-      child: Stack(
-        children: <Widget>[
-          Text(mainicons.title,style: TextStyle(color: Colors.blue),)
-        ],
+      child: Container(
+        width: width,
+        child: Image.asset(mainicons.image),
       ),
     );
   }

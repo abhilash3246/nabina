@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,6 +12,7 @@ class Openflutterfakelist extends StatelessWidget{
     // TODO: implement build
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Container(
           height: 50.0,
