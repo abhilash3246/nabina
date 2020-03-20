@@ -39,6 +39,14 @@ class ProductRepository {
         ]);
   }
 
+  List<Product>detailsliderProduct(){
+    return[
+
+
+    ];
+
+  }
+
   List<Product> getSimilarProducts(int productId) {
     return getProducts(1);
   }
