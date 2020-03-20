@@ -20,6 +20,9 @@ export 'fake_banner.dart';
 export 'fake_dashoffer.dart';
 export 'fake_banner2.dart';
 export 'product_card1.dart';
+export 'fake_bigbanner.dart';
+export 'fake_splitbanner.dart';
+export 'fake_split1.dart';
 
 
 

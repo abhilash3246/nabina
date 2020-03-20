@@ -26,7 +26,7 @@ class CommonHeader extends StatelessWidget{
 
         children: <Widget>[
           Flexible(
-            flex: 1,
+
            child: Row(
              children: <Widget>[
                SizedBox(width: 10,),
@@ -38,7 +38,7 @@ class CommonHeader extends StatelessWidget{
            ),
           ),
           Flexible(
-            flex: 1,
+
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[

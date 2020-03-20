@@ -77,6 +77,16 @@ class _Main1ViewState extends State<Main1View> {
               padding: EdgeInsets.only(left: 10,right: 10),
               child: FakeBanner(width:width,hight: width*.7,),
             ),
+            SizedBox(height: 20,),
+            Padding(
+              padding: EdgeInsets.only(left: 10,right: 10),
+              child: Fakedashoffer(width: width,hight: 80.0,),
+            ),
+            SizedBox(height: 20,),
+            FakeBigBanner(width: width,hight: width*.4,),
+            SizedBox(height: 20,),
+            Fakedsplitbanner(width: width,hight: width*.5,),
+
 
 
             FeaturedProducts(),
