@@ -4,14 +4,19 @@ import 'package:nabina/data/fake_repositories/product_repository.dart';
 import 'package:nabina/data/fake_repositories/mainmenu_repository.dart';
 import 'home.dart';
 
+import 'package:nabina/data/original/models/best_seller_model.dart';
+import 'package:nabina/data/original/Bestsellers/bestseller_repository.dart';
+
 
 class HomeBloc extends Bloc<HomeEvent,HomeState>{
   final ProductRepository productRepository;
   final MainmenuResository mainmenuResository;
+  final BestRespository bestRespository;
 
   HomeBloc({
     @required this.productRepository,
-    @required this.mainmenuResository
+    @required this.mainmenuResository,
+    @required this.bestRespository,
   }) : assert(productRepository != null,mainmenuResository !=null);
 
 

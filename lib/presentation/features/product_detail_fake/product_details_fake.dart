@@ -26,17 +26,13 @@ class _ProductDetailsState extends State<ProductDetails> {
           SizedBox(height: 10,),
           ConstrainedBox(
             constraints: BoxConstraints(
-              minHeight: viewportConstraints.maxHeight,
+              minHeight: viewportConstraints.minHeight,
             ),
             child:  SingleChildScrollView(
               child: Column(
                 children: <Widget>[
                   OpenflutterSlider(width: double.infinity,),
-                  OpenflutterSlider(width: double.infinity,),
-                  OpenflutterSlider(width: double.infinity,),
-                  OpenflutterSlider(width: double.infinity,),
-                  OpenflutterSlider(width: double.infinity,),
-                  OpenflutterSlider(width: double.infinity,),
+
 
                 ],
               ),

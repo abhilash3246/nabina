@@ -52,10 +52,6 @@ class _Main1ViewState extends State<Main1View> {
                   ],
                 ),
               ),
-
-
-
-
             ),
             SizedBox(height: 10.0,),
             Container(width: width,
@@ -86,28 +82,15 @@ class _Main1ViewState extends State<Main1View> {
             FakeBigBanner(width: width,hight: width*.4,),
             SizedBox(height: 20,),
             Fakedsplitbanner(width: width,hight: width*.5,),
-
-
-
             FeaturedProducts(),
-            ProductCard1(
-              brand: 'Tile',
-              name: 'xxxxx',
-              price: 24.00,
-              onSale: true,
-              picture: '',),
-            ProductCard1(
-              brand: 'Tile',
-              name: 'xxxxx',
-              price: 24.00,
-              onSale: true,
-              picture: '',),
-            ProductCard1(
-              brand: 'Tile',
-              name: 'xxxxx',
-              price: 24.00,
-              onSale: true,
-              picture: '',),
+            Container(
+              child: Padding(
+                padding: EdgeInsets.only(top: 10.0,left: 20.0),
+                child: Text("Best Sellers",style: TextStyle(fontSize: 16.0,color:Colors.black,fontWeight: FontWeight.bold),),
+              ),
+            ),
+
+
 
 
 
