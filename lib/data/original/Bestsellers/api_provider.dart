@@ -8,11 +8,12 @@ final _baseural = "http://nabina-env.eba-prqixfsa.us-east-1.elasticbeanstalk.com
 Future<BestsellerResoponce>fetchbestseller()async{
 final responce =await client.get("$_baseural");
 print(responce.body.toString());
-if(responce.statusCode ==200){
-return BestsellerResoponce.fromJson(json.decode(responce.body));
-}else{
-  throw Exception('Failed to load weather');
-}
+//if(responce.statusCode ==200){
+//return
+//  BestsellerResoponce.fromJson(json.decode(responce.body));
+//}else{
+//  throw Exception('Failed to load weather');
+//}
 }
 
 }
