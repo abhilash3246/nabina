@@ -25,6 +25,7 @@ export 'fake_splitbanner.dart';
 export 'fake_split1.dart';
 export 'common_appbar.dart';
 export 'fake_imageslider.dart';
+export 'fake_bar.dart';
 
 
 

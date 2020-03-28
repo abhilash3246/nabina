@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nabina/data/fake_repositories/product_repository.dart';
 import 'package:nabina/data/fake_repositories/mainmenu_repository.dart';
+import 'package:nabina/data/original/models/best_seller_model.dart';
+import 'package:nabina/data/original/Bestsellers/bestseller_repository.dart';
 import 'package:nabina/data/fake_repositories/models/product.dart';
 import 'package:nabina/data/fake_repositories/models/mainicons.dart';
 import 'package:nabina/presentation/widgets/widgets.dart';
@@ -28,7 +30,7 @@ class _homescreen extends State<HomeScreen>{
           title: null,
           body: BlocProvider<HomeBloc>(
               create: (context) {
-                return HomeBloc(productRepository: ProductRepository(),mainmenuResository:  MainmenuResository())
+                return HomeBloc(productRepository: ProductRepository(),mainmenuResository:  MainmenuResository(),bestRespository:ArticleRepositoryImpl() )
                   ..add(HomeLoadEvent());
               },
               child: HomeWrapper ()),
@@ -59,10 +61,10 @@ class _HomeWrapperState extends OpenFlutterWrapperState<HomeWrapper> {
                 changeView: changePage,
                 products:
                 state is HomeLoadedState ? state.newProducts : <Product>[],
-                newproducts:
-                state is HomeLoadedState ? state.salesProducts : <Product>[],
-                 mainiconss:
-                 state is HomeLoadedState? state.mainicons : <MainIcons>[]),
+               newproducts:
+                state is HomeLoadedState ? state.salesProducts : <Product>[], mainiconss:
+               state is HomeLoadedState? state.mainicons : <MainIcons>[]
+            ),
 
 //            Main2View(
 //                changeView: changePage,

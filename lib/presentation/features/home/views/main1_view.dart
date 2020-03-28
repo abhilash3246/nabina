@@ -4,6 +4,7 @@ import 'package:nabina/config/theme.dart';
 import 'package:nabina/data/fake_repositories/models/product.dart';
 import 'package:nabina/data/fake_repositories/models/mainicons.dart';
 import 'package:nabina/presentation/widgets/widgets.dart';
+import 'package:nabina/data/original/models/best_seller_model.dart';
 
 import 'package:nabina/presentation/features/wrapper.dart';
 import 'package:flutter_translate/flutter_translate.dart';
@@ -13,8 +14,9 @@ class Main1View extends StatefulWidget {
   final List<Product> newproducts;
   final List<MainIcons> mainiconss;
   final Function changeView;
-
+//
   const Main1View({Key key, this.products,this.newproducts, this.changeView,this.mainiconss}) : super(key: key);
+
 
   @override
   _Main1ViewState createState() => _Main1ViewState();
@@ -82,13 +84,15 @@ class _Main1ViewState extends State<Main1View> {
             FakeBigBanner(width: width,hight: width*.4,),
             SizedBox(height: 20,),
             Fakedsplitbanner(width: width,hight: width*.5,),
-            FeaturedProducts(),
+            SizedBox(height: 10.0),
+            Openflutterbar(hight: width*.5,),
             Container(
               child: Padding(
                 padding: EdgeInsets.only(top: 10.0,left: 20.0),
                 child: Text("Best Sellers",style: TextStyle(fontSize: 16.0,color:Colors.black,fontWeight: FontWeight.bold),),
               ),
             ),
+            FeaturedProducts(),
 
 
 
