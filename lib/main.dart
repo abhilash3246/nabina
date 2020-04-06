@@ -2,12 +2,15 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:nabina/presentation/features/home/homescreen.dart';
+import 'package:nabina/presentation/features/signin/signin_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(new MaterialApp(
   home: new SplashScreen(),
   debugShowCheckedModeBanner: false,
   routes: <String, WidgetBuilder>{
-    '/HomeScreen': (BuildContext context) => new HomeScreen()
+    '/HomeScreen': (BuildContext context) => new HomeScreen(),
+    '/Signin' : (BuildContext context) => new SignInScreen(),
   },
 ));
 
@@ -22,8 +25,9 @@ void main() => runApp(new MaterialApp(
      return new Timer(_duration, navigationPage);
    }
 
-   void navigationPage() {
-     Navigator.of(context).pushReplacementNamed('/HomeScreen');
+   void navigationPage() async {
+     Navigator.push(context, MaterialPageRoute(builder: (_)=> SignInScreen()));
+//     Navigator.of(context).pushReplacementNamed('/Signin');
    }
 
    @override

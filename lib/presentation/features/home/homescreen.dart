@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:nabina/data/fake_repositories/product_repository.dart';
 import 'package:nabina/data/fake_repositories/mainmenu_repository.dart';
 import 'package:nabina/data/original/models/best_seller_model.dart';
-import 'package:nabina/data/original/Bestsellers/bestseller_repository.dart';
 import 'package:nabina/data/fake_repositories/models/product.dart';
 import 'package:nabina/data/fake_repositories/models/mainicons.dart';
+import 'package:nabina/data/original/models/navigation_model.dart';
 import 'package:nabina/presentation/widgets/widgets.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'home.dart';
 import 'package:nabina/presentation/features/wrapper.dart';
+
 
 
 
@@ -30,8 +31,8 @@ class _homescreen extends State<HomeScreen>{
           title: null,
           body: BlocProvider<HomeBloc>(
               create: (context) {
-                return HomeBloc(productRepository: ProductRepository(),mainmenuResository:  MainmenuResository(),bestRespository:ArticleRepositoryImpl() )
-                  ..add(HomeLoadEvent());
+                return HomeBloc()
+                  ..add(HomeLoadEvent(''));
               },
               child: HomeWrapper ()),
 
@@ -56,14 +57,12 @@ class _HomeWrapperState extends OpenFlutterWrapperState<HomeWrapper> {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
         builder: (BuildContext context, HomeState state) {
+          print(state);
           return getPageView(<Widget>[
             Main1View(
                 changeView: changePage,
-                products:
-                state is HomeLoadedState ? state.newProducts : <Product>[],
-               newproducts:
-                state is HomeLoadedState ? state.salesProducts : <Product>[], mainiconss:
-               state is HomeLoadedState? state.mainicons : <MainIcons>[]
+                navigation:
+                state is HomeLoadedState ? state.navdata : <Navigation>[],
             ),
 
 //            Main2View(

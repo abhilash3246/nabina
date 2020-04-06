@@ -16,23 +16,61 @@ class Openflutterfakelist extends StatelessWidget{
       children: <Widget>[
         Container(
           height: 50.0,
-          child: Image.asset('assets/icons/mainscreen_icons/doors.png'),
+          child: Column(
+            children: <Widget>[
+             Container(height:40,
+             child:  Image.asset('assets/icons/mainscreen_icons/doors.png'),),
+              Text('Doors',style: TextStyle(fontSize: 8),)
+            ],
+          )
         ),
         Container(
           height: 50.0,
-          child: Image.asset('assets/icons/mainscreen_icons/kitchen.png'),
+          child: Column(
+        children: <Widget>[
+        Container(height:40,
+          child:   Image.asset('assets/icons/mainscreen_icons/kitchen.png'),),
+        Text('Kitchen',style: TextStyle(fontSize: 8),)
+      ],
+    )
+
+
         ),
         Container(
           height: 50.0,
-          child: Image.asset('assets/icons/mainscreen_icons/mater.png'),
+          child: Column(
+    children: <Widget>[
+    Container(height:40,
+    child:   Image.asset('assets/icons/mainscreen_icons/mater.png'),),
+    Text('Builbing...',style: TextStyle(fontSize: 8),)
+    ],
+    )
+
+
+
         ),
         Container(
           height: 50.0,
-          child: Image.asset('assets/icons/mainscreen_icons/por.png'),
+          child: Column(
+    children: <Widget>[
+    Container(height:40,
+    child:  Image.asset('assets/icons/mainscreen_icons/por.png'),),
+    Text('Porcelain',style: TextStyle(fontSize: 8),)
+    ],
+    )
+
+
+
         ),
         Container(
-          height: 50.0,
-          child: Image.asset('assets/icons/mainscreen_icons/doors.png'),
+            height: 50.0,
+            child: Column(
+              children: <Widget>[
+                Container(height:40,
+                  child:  Image.asset('assets/icons/mainscreen_icons/doors.png'),),
+                Text('Doors',style: TextStyle(fontSize: 8),)
+              ],
+            )
         ),
 
 

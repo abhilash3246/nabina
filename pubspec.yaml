@@ -30,9 +30,11 @@ dependencies:
   flutter_bloc: ^3.1.0
   equatable: ^1.1.0
   fluttertoast: ^3.1.3
-  carousel_pro: ^1.0.0
+  carousel_slider: ^1.4.1
   http: ^0.12.0+4
   rxdart: ^0.23.0
+  shared_preferences: ^0.5.6+3
+  google_fonts: ^0.3.10
 
 
 
@@ -76,6 +78,14 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
+  fonts:
+    - family: Franklin
+      fonts:
+        - asset: fonts/LibreFranklin-Medium.ttf
+    - family: Segoe
+      fonts:
+        - asset: fonts/Segoe-bold.ttf
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
